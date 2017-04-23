@@ -10,15 +10,15 @@ To create an application using client tools, type the following command:
 
 This command creates an application *backend* using *DIY* cartridge and clones the repository to *backend* directory.
 
-# Step 2: Add PostgreSQL cartridge to application
+# Step 2: Add MYSQL cartridge to application
 
-The application we are creating will use PostgreSQL database, hence we need to add appropriate cartridge to the application:
+The application we are creating will use MYSQL database, hence we need to add appropriate cartridge to the application:
 
-	rhc cartridge add postgresql-9.2 --app backend
+	rhc cartridge add mysql-5.5 -a backend
 
 After creating the cartridge, it is possible to check its status with the following command:
 
-    rhc cartridge status postgresql-9.2 --app backend
+    rhc cartridge status mysql-5.5 --app backend
 
 # Step 3: Delete Template Application Source code
 
