@@ -32,7 +32,7 @@ Commit the changes:
 
 # Step 4: Pull Source code from GitHub
 
-    git remote add upstream https://github.com/kolorobot/openshift-diy-spring-boot-sample.git
+    git remote add upstream https://github.com/Java-SpringBoot/openshift-springboot-mysql-diy.git
     git pull -s recursive -X theirs upstream master --allow-unrelated-histories
 
 # Step 5: Push changes
