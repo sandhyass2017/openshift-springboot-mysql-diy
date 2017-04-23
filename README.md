@@ -6,19 +6,19 @@ Before we can start building the application, we need to have an OpenShift free 
 
 To create an application using client tools, type the following command:
 
-    rhc app create boot diy-0.1
+    rhc app create backend diy-0.1
 
-This command creates an application *boot* using *DIY* cartridge and clones the repository to *boot* directory.
+This command creates an application *backend* using *DIY* cartridge and clones the repository to *backend* directory.
 
 # Step 2: Add PostgreSQL cartridge to application
 
 The application we are creating will use PostgreSQL database, hence we need to add appropriate cartridge to the application:
 
-	rhc cartridge add postgresql-9.2 --app boot
+	rhc cartridge add postgresql-9.2 --app backend
 
 After creating the cartridge, it is possible to check its status with the following command:
 
-    rhc cartridge status postgresql-9.2 --app boot
+    rhc cartridge status postgresql-9.2 --app backend
 
 # Step 3: Delete Template Application Source code
 
@@ -46,7 +46,7 @@ The initial deployment (build and application startup) will take some time (up t
 	Tomcat started on port(s): 8080/http
 	Started Application in 125.511 seconds
 
-You can now browse to: http://boot-<namespace>.rhcloud.com/manage/health and you should see:
+You can now browse to: http://backend-<namespace>.rhcloud.com/manage/health and you should see:
 
 	{
 		"status": "UP",
@@ -56,28 +56,3 @@ You can now browse to: http://boot-<namespace>.rhcloud.com/manage/health and you
 
 You can then browse to "/" to see the API root resource.
 
-# Step 6: Adding Jenkins
-
-Using Jenkins has some advantages. One of them is that the build takes place in it's own Gear. To build with Jenkins, OpenShift needs a server and a Jenkins client cartridge attached to the application. Creating Jenkins application:
-
-	rhc app create ci jenkins
-
-And attaching Jenkins client to the application:
-
-	rhc cartridge add jenkins-client --app boot
-
-You can now browse to: http://ci-<namespace>.rhcloud.com and login with the credentials provided. When you make next changes and push them, the build will be triggered by Jenkins:
-
-	remote: Executing Jenkins build.
-	remote:
-	remote: You can track your build at https://ci-<namespace>.rhcloud.com/job/boot-build
-	remote:
-	remote: Waiting for build to schedule.........
-
-And when you observe the build result, the application starts a bit faster on Jenkins:
-
-	Started Application in 52.391 seconds
-
-# Under the hood
-
-http://blog.codeleak.pl/2014/10/spring-boot-java-8-tomcat-8-on-openshift.html
