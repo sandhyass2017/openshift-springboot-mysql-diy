@@ -50,7 +50,7 @@ You can now browse to: http://backend-<namespace>.rhcloud.com/manage/health and 
 
 	{
 		"status": "UP",
-		"database": "PostgreSQL",
+		"database": "MYSQL",
 		"hello": 1
 	}
 
