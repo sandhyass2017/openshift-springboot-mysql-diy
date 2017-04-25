@@ -30,11 +30,18 @@ Commit the changes:
 
     git commit -am "Removed template application source code"
 
-# Step 4: Pull Source code from GitHub
+# Step 4: Pull Source code from GitHub or Local machine repository
 
     git remote add upstream https://github.com/Java-SpringBoot/openshift-springboot-mysql-diy.git
     git pull -s recursive -X theirs upstream master --allow-unrelated-histories
-
+   # Or
+    git clone <git_url> <directory to create>
+    git add .
+    git commit -m "A checkin to my application"
+    # Start Script :
+     git update-index --chmod=+x .openshift/action_hooks/deploy
+     git commit -m "A checkin to my application"
+    
 # Step 5: Push changes
 
 The basic template is ready to be pushed:
