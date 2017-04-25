@@ -34,13 +34,12 @@ Commit the changes:
 
     git remote add upstream https://github.com/Java-SpringBoot/openshift-springboot-mysql-diy.git
     git pull -s recursive -X theirs upstream master --allow-unrelated-histories
-   # Or
+   # Optional :Local machine repository
     git clone <git_url> <directory to create>
     git add .
     git commit -m "A checkin to my application"
-    # Start Script :
-     git update-index --chmod=+x .openshift/action_hooks/deploy
-     git commit -m "A checkin to my application"
+    git update-index --chmod=+x .openshift/action_hooks/deploy
+    git commit -m "A checkin to my application"
     
 # Step 5: Push changes
 
