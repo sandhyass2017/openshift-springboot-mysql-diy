@@ -1,4 +1,4 @@
-package backendrepository;
+package backend.repository;
 
 import backend.model.Person;
 import org.springframework.data.repository.PagingAndSortingRepository;
